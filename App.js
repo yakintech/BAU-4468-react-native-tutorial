@@ -8,6 +8,7 @@ import Footer from './src/JsxSample/Footer'
 import IfElseSample from './src/JsxSample/IfElseSample'
 import UserDetail from './src/JsxSample/UserDetail'
 import BackNeck from './src/templateSample/BackNeck'
+import DynamicBox from './src/templateSample/DynamicBox'
 import Elbow from './src/templateSample/Elbow'
 import Hand from './src/templateSample/Hand'
 import HeaderTitle from './src/templateSample/HeaderTitle'
@@ -24,10 +25,20 @@ const App = () => {
         <View style={{ flex: 1, padding: 20 }}>
           <HeaderTitle></HeaderTitle>
           <Title></Title>
-          <HeadFace></HeadFace>
-          <BackNeck></BackNeck>
-          <Elbow></Elbow>
-          <Hand></Hand>
+          
+          <DynamicBox bColor='#CC7463' title='Head / Face' subTitle='11 diseases'></DynamicBox>
+
+          <DynamicBox bColor='#8cc0b7' title='Back / Neck' subTitle='11 diseases'></DynamicBox>
+
+          <DynamicBox bColor='#D7952D' title='Elbow / Neck' subTitle='11 diseases'></DynamicBox>
+
+          <DynamicBox bColor='#48687A' title='Hand / Arm' subTitle='11 diseases'></DynamicBox>
+
+          {/* <HeadFace></HeadFace> */}
+          {/* <BackNeck></BackNeck> */}
+           {/* <Elbow></Elbow> */}
+           {/* <Hand></Hand> */}
+
           <Menu></Menu>
         </View>
 

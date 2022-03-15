@@ -6,8 +6,7 @@ const HeaderTitle = () => {
     const headerStyles = {
         flex:1,
         flexDirection:'row',
-        justifyContent: 'space-between',
-        // display:flex
+        justifyContent: 'space-between'
     }
     return (
         <View style={headerStyles}>
