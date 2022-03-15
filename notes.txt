@@ -1,2 +1,8 @@
 you must wrap all element with fragment (<><(/>))
 SafeAreaView for iphone
+
+
+
+
+Flex Design
+https://css-tricks.com/snippets/css/a-guide-to-flexbox/
