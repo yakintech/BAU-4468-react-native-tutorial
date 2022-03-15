@@ -1,0 +1,2 @@
+you must wrap all element with fragment (<><(/>))
+SafeAreaView for iphone
