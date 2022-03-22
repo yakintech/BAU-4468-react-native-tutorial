@@ -11,6 +11,10 @@ import PropsArraySample from './src/propSample/PropsArraySample'
 import PropsFunctionSample from './src/propSample/PropsFunctionSample'
 import PropsObjectArraySample from './src/propSample/PropsObjectArraySample'
 import PropsObjectSample from './src/propSample/PropsObjectSample'
+import StateSample from './src/StateSample/StateSample'
+import StateSample2 from './src/StateSample/StateSample2'
+import StateSample3 from './src/StateSample/StateSample3'
+import StateSampleWithArray from './src/StateSample/StateSampleWithArray'
 import BackNeck from './src/templateSample/BackNeck'
 import DynamicBox from './src/templateSample/DynamicBox'
 import Elbow from './src/templateSample/Elbow'
@@ -95,7 +99,11 @@ const App = () => {
     <>
       <SafeAreaView style={{ flex: 1, padding: 20 }}>
 
-        <PropsFunctionSample myFunc2={myFunctionForChild} myFunc={myFunction}></PropsFunctionSample>
+        <StateSample3></StateSample3>
+        {/* <StateSampleWithArray></StateSampleWithArray> */}
+        {/* <StateSample2></StateSample2> */}
+        {/* <StateSample></StateSample> */}
+        {/* <PropsFunctionSample myFunc2={myFunctionForChild} myFunc={myFunction}></PropsFunctionSample> */}
 
 
         {/* <PropsObjectArraySample categoryList={categories}></PropsObjectArraySample> */}

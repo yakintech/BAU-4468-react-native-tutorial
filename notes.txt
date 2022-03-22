@@ -1,9 +1,15 @@
 you must wrap all element with fragment (<><(/>))
 SafeAreaView for iphone
 Props pass ( object, object array, string, number, func)
+Jsx expressions must have one parent element error? (wrapping with Fragment)
 
+** whats filter function ?
 
 
 
 Flex Design
 https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
+MDN filter
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
+https://www.w3schools.com/jsref/jsref_filter.asp
