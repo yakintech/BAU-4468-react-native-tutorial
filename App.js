@@ -7,6 +7,10 @@ import Content from './src/JsxSample/Content'
 import Footer from './src/JsxSample/Footer'
 import IfElseSample from './src/JsxSample/IfElseSample'
 import UserDetail from './src/JsxSample/UserDetail'
+import PropsArraySample from './src/propSample/PropsArraySample'
+import PropsFunctionSample from './src/propSample/PropsFunctionSample'
+import PropsObjectArraySample from './src/propSample/PropsObjectArraySample'
+import PropsObjectSample from './src/propSample/PropsObjectSample'
 import BackNeck from './src/templateSample/BackNeck'
 import DynamicBox from './src/templateSample/DynamicBox'
 import Elbow from './src/templateSample/Elbow'
@@ -19,11 +23,87 @@ import Title from './src/templateSample/Title'
 
 
 const App = () => {
+
+  let user = {
+    name: "Çağatay",
+    surname: "Yıldız",
+    year: 2022,
+    address: {
+      street: 'Süleyman Seba',
+      city: 'İstanbul'
+    }
+  }
+
+
+  let metalBands = ['Iron Maiden', 'Gojira', 'In Flames', 'Rotting Christ'];
+
+
+  let categories = [
+    {
+      "id": 2,
+      "description": "Sweet and savory sauces relishes spreads and seasonings",
+      "name": "Condiments"
+    },
+    {
+      "id": 1,
+      "description": "Soft drinks coffees teas beers and ales",
+      "name": "Beverages"
+    },
+    {
+      "id": 3,
+      "description": "Desserts candies and sweet breads",
+      "name": "Confections"
+    },
+    {
+      "id": 4,
+      "description": "Cheeses",
+      "name": "Dairy Products"
+    },
+    {
+      "id": 5,
+      "description": "Breads crackers pasta and cereal",
+      "name": "Grains/Cereals"
+    },
+    {
+      "id": 6,
+      "description": "Prepared meats",
+      "name": "Meat/Poultry"
+    },
+    {
+      "id": 7,
+      "description": "Dried fruit and bean curd",
+      "name": "Produce"
+    },
+    {
+      "id": 8,
+      "description": "Seaweed and fish",
+      "name": "Seafood"
+    }
+  ];
+
+  const myFunction = (name) => {
+
+    alert('Hello ' + name);
+
+  }
+
+  const myFunctionForChild = (name, surname) => {
+    alert(name + " " + surname)
+  }
+
   return (
     <>
       <SafeAreaView style={{ flex: 1, padding: 20 }}>
-        <View style={{ flex: 1, padding: 20 }}>
-          <HeaderTitle></HeaderTitle>
+
+        <PropsFunctionSample myFunc2={myFunctionForChild} myFunc={myFunction}></PropsFunctionSample>
+
+
+        {/* <PropsObjectArraySample categoryList={categories}></PropsObjectArraySample> */}
+        {/* <PropsArraySample metals={metalBands} year={2022}></PropsArraySample> */}
+
+        {/* <PropsObjectSample webUser={user}></PropsObjectSample> */}
+        {/* <View style={{ flex: 1, padding: 20 }}> */}
+        {/* <HeaderTitle></HeaderTitle>
           <Title></Title>
           
           <DynamicBox bColor='#CC7463' title='Head / Face' subTitle='11 diseases'></DynamicBox>
@@ -32,15 +112,16 @@ const App = () => {
 
           <DynamicBox bColor='#D7952D' title='Elbow / Neck' subTitle='11 diseases'></DynamicBox>
 
-          <DynamicBox bColor='#48687A' title='Hand / Arm' subTitle='11 diseases'></DynamicBox>
+          <DynamicBox bColor='#48687A' title='Hand / Arm' subTitle='11 diseases'></DynamicBox> */}
 
-          {/* <HeadFace></HeadFace> */}
-          {/* <BackNeck></BackNeck> */}
-           {/* <Elbow></Elbow> */}
-           {/* <Hand></Hand> */}
+        {/* <HeadFace></HeadFace> */}
+        {/* <BackNeck></BackNeck> */}
+        {/* <Elbow></Elbow> */}
+        {/* <Hand></Hand> */}
 
-          <Menu></Menu>
-        </View>
+        {/* <Menu></Menu> */}
+        {/* </View> */}
+
 
       </SafeAreaView>
     </>

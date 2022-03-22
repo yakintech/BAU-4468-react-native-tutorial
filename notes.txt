@@ -1,5 +1,6 @@
 you must wrap all element with fragment (<><(/>))
 SafeAreaView for iphone
+Props pass ( object, object array, string, number, func)
 
 
 
