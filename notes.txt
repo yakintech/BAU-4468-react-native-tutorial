@@ -2,7 +2,12 @@ you must wrap all element with fragment (<><(/>))
 SafeAreaView for iphone
 Props pass ( object, object array, string, number, func)
 Jsx expressions must have one parent element error? (wrapping with Fragment)
-
+React hooks?? (State, Effect)
+import element ( must )
+button title or inside? 
+whats fecth function?
+use effect run options ( empty array)
+after state change? 
 ** whats filter function ?
 
 

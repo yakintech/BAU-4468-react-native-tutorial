@@ -1,5 +1,8 @@
 import React from 'react'
 import { View, Text, SafeAreaView } from 'react-native'
+import EffectSample from './src/effectSample/EffectSample'
+import EffectSample2 from './src/effectSample/EffectSample2'
+import FetchGetSample from './src/fetchSample/FetchGetSample'
 import CategoryList from './src/JsxSample/CategoryList'
 import CityList from './src/JsxSample/CityList'
 
@@ -99,7 +102,11 @@ const App = () => {
     <>
       <SafeAreaView style={{ flex: 1, padding: 20 }}>
 
-        <StateSample3></StateSample3>
+      <FetchGetSample></FetchGetSample>
+
+        {/* <EffectSample2></EffectSample2> */}
+        {/* <EffectSample></EffectSample> */}
+        {/* <StateSample3></StateSample3> */}
         {/* <StateSampleWithArray></StateSampleWithArray> */}
         {/* <StateSample2></StateSample2> */}
         {/* <StateSample></StateSample> */}
