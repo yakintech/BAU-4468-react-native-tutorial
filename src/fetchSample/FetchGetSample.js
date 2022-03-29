@@ -23,8 +23,8 @@ const FetchGetSample = () => {
     return (
         <ScrollView>
            {
-               products && products.map((item,key) => {
-                  return <Text>{item.name}</Text>
+               products && products.map((item,index) => {
+                  return <Text key={index}>{item.name}</Text>
                })
            }
         </ScrollView>

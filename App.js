@@ -3,6 +3,7 @@ import { View, Text, SafeAreaView } from 'react-native'
 import EffectSample from './src/effectSample/EffectSample'
 import EffectSample2 from './src/effectSample/EffectSample2'
 import FetchGetSample from './src/fetchSample/FetchGetSample'
+import FlatListSample from './src/flatListSample/FlatListSample'
 import CategoryList from './src/JsxSample/CategoryList'
 import CityList from './src/JsxSample/CityList'
 
@@ -14,6 +15,8 @@ import PropsArraySample from './src/propSample/PropsArraySample'
 import PropsFunctionSample from './src/propSample/PropsFunctionSample'
 import PropsObjectArraySample from './src/propSample/PropsObjectArraySample'
 import PropsObjectSample from './src/propSample/PropsObjectSample'
+import ListSample from './src/reactNativeElements/ListSample'
+import ProductListSample from './src/reactNativeElements/ProductListSample'
 import StateSample from './src/StateSample/StateSample'
 import StateSample2 from './src/StateSample/StateSample2'
 import StateSample3 from './src/StateSample/StateSample3'
@@ -102,7 +105,10 @@ const App = () => {
     <>
       <SafeAreaView style={{ flex: 1, padding: 20 }}>
 
-      <FetchGetSample></FetchGetSample>
+        <ProductListSample></ProductListSample>
+        {/* <ListSample></ListSample> */}
+        {/* <FlatListSample></FlatListSample> */}
+        {/* <FetchGetSample></FetchGetSample> */}
 
         {/* <EffectSample2></EffectSample2> */}
         {/* <EffectSample></EffectSample> */}
