@@ -8,6 +8,7 @@ const FetchGetSample = () => {
     const [products, setProducts] = useState([]);
 
 
+    
     useEffect(() => {
 
         fetch(apiURL)

@@ -1,36 +1,12 @@
 import React from 'react'
 import { View, Text, SafeAreaView } from 'react-native'
-import EffectSample from './src/effectSample/EffectSample'
-import EffectSample2 from './src/effectSample/EffectSample2'
-import FetchGetSample from './src/fetchSample/FetchGetSample'
-import FlatListSample from './src/flatListSample/FlatListSample'
-import CategoryList from './src/JsxSample/CategoryList'
-import CityList from './src/JsxSample/CityList'
+import CategoryPage from './src/CategoryCRUD/CategoryPage'
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import HomeScreen from './src/navigationSample/HomeScreen';
+import UserScreen from './src/navigationSample/UserScreen';
 
-import Content from './src/JsxSample/Content'
-import Footer from './src/JsxSample/Footer'
-import IfElseSample from './src/JsxSample/IfElseSample'
-import UserDetail from './src/JsxSample/UserDetail'
-import PropsArraySample from './src/propSample/PropsArraySample'
-import PropsFunctionSample from './src/propSample/PropsFunctionSample'
-import PropsObjectArraySample from './src/propSample/PropsObjectArraySample'
-import PropsObjectSample from './src/propSample/PropsObjectSample'
-import ListSample from './src/reactNativeElements/ListSample'
-import ProductListSample from './src/reactNativeElements/ProductListSample'
-import StateSample from './src/StateSample/StateSample'
-import StateSample2 from './src/StateSample/StateSample2'
-import StateSample3 from './src/StateSample/StateSample3'
-import StateSampleWithArray from './src/StateSample/StateSampleWithArray'
-import BackNeck from './src/templateSample/BackNeck'
-import DynamicBox from './src/templateSample/DynamicBox'
-import Elbow from './src/templateSample/Elbow'
-import Hand from './src/templateSample/Hand'
-import HeaderTitle from './src/templateSample/HeaderTitle'
-import HeadFace from './src/templateSample/HeadFace'
-import Menu from './src/templateSample/Menu'
-import Title from './src/templateSample/Title'
-
-
+const Stack = createNativeStackNavigator();
 
 const App = () => {
 
@@ -101,50 +77,21 @@ const App = () => {
     alert(name + " " + surname)
   }
 
+
+  console.log('App.js rendered');
   return (
     <>
-      <SafeAreaView style={{ flex: 1, padding: 20 }}>
 
-        <ProductListSample></ProductListSample>
-        {/* <ListSample></ListSample> */}
-        {/* <FlatListSample></FlatListSample> */}
-        {/* <FetchGetSample></FetchGetSample> */}
+        <NavigationContainer>
 
-        {/* <EffectSample2></EffectSample2> */}
-        {/* <EffectSample></EffectSample> */}
-        {/* <StateSample3></StateSample3> */}
-        {/* <StateSampleWithArray></StateSampleWithArray> */}
-        {/* <StateSample2></StateSample2> */}
-        {/* <StateSample></StateSample> */}
-        {/* <PropsFunctionSample myFunc2={myFunctionForChild} myFunc={myFunction}></PropsFunctionSample> */}
+          <Stack.Navigator>
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="User" component={UserScreen} />
+          </Stack.Navigator>
 
+        </NavigationContainer>
+  
 
-        {/* <PropsObjectArraySample categoryList={categories}></PropsObjectArraySample> */}
-        {/* <PropsArraySample metals={metalBands} year={2022}></PropsArraySample> */}
-
-        {/* <PropsObjectSample webUser={user}></PropsObjectSample> */}
-        {/* <View style={{ flex: 1, padding: 20 }}> */}
-        {/* <HeaderTitle></HeaderTitle>
-          <Title></Title>
-          
-          <DynamicBox bColor='#CC7463' title='Head / Face' subTitle='11 diseases'></DynamicBox>
-
-          <DynamicBox bColor='#8cc0b7' title='Back / Neck' subTitle='11 diseases'></DynamicBox>
-
-          <DynamicBox bColor='#D7952D' title='Elbow / Neck' subTitle='11 diseases'></DynamicBox>
-
-          <DynamicBox bColor='#48687A' title='Hand / Arm' subTitle='11 diseases'></DynamicBox> */}
-
-        {/* <HeadFace></HeadFace> */}
-        {/* <BackNeck></BackNeck> */}
-        {/* <Elbow></Elbow> */}
-        {/* <Hand></Hand> */}
-
-        {/* <Menu></Menu> */}
-        {/* </View> */}
-
-
-      </SafeAreaView>
     </>
 
   )
