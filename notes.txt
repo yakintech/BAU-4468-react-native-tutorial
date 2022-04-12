@@ -9,7 +9,8 @@ whats fecth function?
 use effect run options ( empty array)
 after state change? 
 ** whats filter function ?
-http request methods? 
+http request methods?
+touchable opacity, pressable, button
 
 ** React Native UI Libraries or UI Kit ( React Native Elements, Native Base, React Native Papes)
 

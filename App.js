@@ -1,13 +1,16 @@
 import React from 'react'
-import { View, Text, SafeAreaView } from 'react-native'
-import CategoryPage from './src/CategoryCRUD/CategoryPage'
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import HomeScreen from './src/navigationSample/HomeScreen';
-import UserScreen from './src/navigationSample/UserScreen';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import HomeStackScreen from './src/tabNavigationSample/HomeStackScreen';
+import ProductsStackScreen from './src/tabNavigationSample/ProductsStackScreen';
+import CartStackScreen from './src/tabNavigationSample/CartStackScreen';
+import NotificationStackScreen from './src/tabNavigationSample/NotificationStackScreen';
+import ProfileStackScreen from './src/tabNavigationSample/ProfileStackScreen';
 
-const Stack = createNativeStackNavigator();
 
+// const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
 const App = () => {
 
   let user = {
@@ -78,19 +81,55 @@ const App = () => {
   }
 
 
-  console.log('App.js rendered');
   return (
     <>
 
-        <NavigationContainer>
+      {/*  //       options={{
+    //         tabBarBadge: 2,
+    //         tabBarIcon: () => (<MaterialCommunityIcons name="home-alert-outline" size={40} />)
+    //       }}*/}
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen options={{
+            tabBarIcon: () => (<MaterialCommunityIcons name="home" size={40}></MaterialCommunityIcons>),
+            headerShown: false
+          }} name="Home" component={HomeStackScreen} />
 
-          <Stack.Navigator>
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="User" component={UserScreen} />
-          </Stack.Navigator>
+          <Tab.Screen options={{
+            tabBarIcon: () => (<MaterialCommunityIcons name="jira" size={40}></MaterialCommunityIcons>),
+            headerShown: false
+          }
+          } name="Products" component={ProductsStackScreen} />
 
-        </NavigationContainer>
-  
+          <Tab.Screen options={
+            {
+              tabBarIcon: () => (<MaterialCommunityIcons name="cart" size={40}></MaterialCommunityIcons>),
+              headerShown: false,
+              tabBarBadge:0
+            }
+          } name="Cart" component={CartStackScreen} />
+
+
+          <Tab.Screen options={
+           {
+            tabBarIcon: () => (<MaterialCommunityIcons name="notification-clear-all" size={40}></MaterialCommunityIcons>),
+            headerShown: false
+          }
+          } name="Notification" component={NotificationStackScreen} />
+
+
+   
+          <Tab.Screen options={
+             {
+              tabBarIcon: () => (<MaterialCommunityIcons name="umbrella" size={40}></MaterialCommunityIcons>),
+              headerShown: false
+            }
+          } name="Profile" component={ProfileStackScreen} />
+
+
+        </Tab.Navigator>
+      </NavigationContainer>
+
 
     </>
 
