@@ -7,6 +7,8 @@ import ProductsStackScreen from './src/tabNavigationSample/ProductsStackScreen';
 import CartStackScreen from './src/tabNavigationSample/CartStackScreen';
 import NotificationStackScreen from './src/tabNavigationSample/NotificationStackScreen';
 import ProfileStackScreen from './src/tabNavigationSample/ProfileStackScreen';
+import {CartProvider} from './src/store/cartContext';
+import TabMain from './src/tabNavigationSample/TabMain';
 
 
 // const Stack = createNativeStackNavigator();
@@ -81,56 +83,14 @@ const App = () => {
   }
 
 
+
+
   return (
     <>
 
-      {/*  //       options={{
-    //         tabBarBadge: 2,
-    //         tabBarIcon: () => (<MaterialCommunityIcons name="home-alert-outline" size={40} />)
-    //       }}*/}
-      <NavigationContainer>
-        <Tab.Navigator>
-          <Tab.Screen options={{
-            tabBarIcon: () => (<MaterialCommunityIcons name="home" size={40}></MaterialCommunityIcons>),
-            headerShown: false
-          }} name="Home" component={HomeStackScreen} />
-
-          <Tab.Screen options={{
-            tabBarIcon: () => (<MaterialCommunityIcons name="jira" size={40}></MaterialCommunityIcons>),
-            headerShown: false
-          }
-          } name="Products" component={ProductsStackScreen} />
-
-          <Tab.Screen options={
-            {
-              tabBarIcon: () => (<MaterialCommunityIcons name="cart" size={40}></MaterialCommunityIcons>),
-              headerShown: false,
-              tabBarBadge:0
-            }
-          } name="Cart" component={CartStackScreen} />
-
-
-          <Tab.Screen options={
-           {
-            tabBarIcon: () => (<MaterialCommunityIcons name="notification-clear-all" size={40}></MaterialCommunityIcons>),
-            headerShown: false
-          }
-          } name="Notification" component={NotificationStackScreen} />
-
-
-   
-          <Tab.Screen options={
-             {
-              tabBarIcon: () => (<MaterialCommunityIcons name="umbrella" size={40}></MaterialCommunityIcons>),
-              headerShown: false
-            }
-          } name="Profile" component={ProfileStackScreen} />
-
-
-        </Tab.Navigator>
-      </NavigationContainer>
-
-
+      <CartProvider>
+        <TabMain></TabMain>
+      </CartProvider>
     </>
 
   )

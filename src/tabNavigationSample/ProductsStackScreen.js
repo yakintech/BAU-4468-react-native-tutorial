@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import { View, Text, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native'
+import React, { createContext, useContext, useEffect, useState } from 'react'
+import { View, Text, FlatList, TouchableOpacity, ActivityIndicator, Button } from 'react-native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { API_URL } from '../env/config';
+import cartContext from '../store/cartContext';
+import { storeCart } from '../helper/storageHelper';
 
 const ProductsStack = createNativeStackNavigator();
 
@@ -18,6 +20,8 @@ const ProductsStackScreen = () => {
 
 
 const ProductScreen = ({ navigation }) => {
+
+    const { cart, setCart } = useContext(cartContext)
 
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true)
@@ -40,10 +44,42 @@ const ProductScreen = ({ navigation }) => {
 
     }
 
+
+    const addToCart = (item) => {
+
+
+        var cartItem = cart.find(q => q.id == item.id);
+
+        if(cartItem == null){
+            let newCartItem = {
+                name: item.name,
+                quantity: 1,
+                id: item.id,
+                price: item.unitPrice
+            }
+
+            setCart([...cart, newCartItem]);
+            storeCart([...cart, newCartItem])
+        }
+        else{
+
+            cartItem.quantity = cartItem.quantity + 1;
+            setCart([...cart])
+            storeCart([...cart])
+
+        }
+
+
+
+    }
+
     const renderProductItem = ({ item }) => {
-        return <TouchableOpacity onPress={() => goToDetail(item.id, item.name)}>
-            <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
-        </TouchableOpacity>
+        return <>
+            <TouchableOpacity onPress={() => goToDetail(item.id, item.name)}>
+                <Text style={{ fontSize: 20, fontWeight: 'bold' }}>{item.name}</Text>
+            </TouchableOpacity>
+            <Button title='Add to Cart' onPress={() => addToCart(item)}></Button>
+        </>
     }
 
     return (
@@ -90,8 +126,8 @@ const ProductDetailScreen = ({ route, navigation }) => {
                 <Text>ID: {product.id}</Text>
                 <Text>Name: {product.name}</Text>
                 <Text>Unit Price: {product.unitPrice}</Text>
-                <Text>Stock: {product.unitsInStock}</Text> 
-                </>
+                <Text>Stock: {product.unitsInStock}</Text>
+            </>
 
         }
 
