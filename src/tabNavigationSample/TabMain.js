@@ -1,6 +1,6 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import React, {useContext, useEffect} from "react";
+import React, { useContext, useEffect } from "react";
 import MaterialCommunityIcons from '../../node_modules/react-native-vector-icons/MaterialCommunityIcons';
 import { getCart, storeCart } from "../helper/storageHelper";
 import cartContext from "../store/cartContext";
@@ -9,6 +9,7 @@ import HomeStackScreen from "./HomeStackScreen";
 import NotificationStackScreen from "./NotificationStackScreen";
 import ProductsStackScreen from "./ProductsStackScreen";
 import ProfileStackScreen from "./ProfileStackScreen";
+import ToDoStackScreen from "./ToDoStackScreen";
 
 
 
@@ -20,13 +21,13 @@ const TabMain = () => {
     const { cart, setCart } = useContext(cartContext);
 
     useEffect(() => {
-   
+
         getCart()
-        .then((data) => {
+            .then((data) => {
 
-            setCart(data);
+                setCart(data);
 
-        })
+            })
 
     }, [])
     return (
@@ -61,13 +62,20 @@ const TabMain = () => {
                 } name="Notification" component={NotificationStackScreen} />
 
 
-
                 <Tab.Screen options={
                     {
                         tabBarIcon: () => (<MaterialCommunityIcons name="umbrella" size={40}></MaterialCommunityIcons>),
                         headerShown: false
                     }
-                } name="Profile" component={ProfileStackScreen} />
+                } name="ToDo" component={ToDoStackScreen} />
+
+
+                {/* <Tab.Screen options={
+                    {
+                        tabBarIcon: () => (<MaterialCommunityIcons name="umbrella" size={40}></MaterialCommunityIcons>),
+                        headerShown: false
+                    }
+                } name="Profile" component={ProfileStackScreen} /> */}
 
 
             </Tab.Navigator>
