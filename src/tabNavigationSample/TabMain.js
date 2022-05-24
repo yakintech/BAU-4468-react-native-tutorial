@@ -9,6 +9,7 @@ import HomeStackScreen from "./HomeStackScreen";
 import NotificationStackScreen from "./NotificationStackScreen";
 import ProductsStackScreen from "./ProductsStackScreen";
 import ProfileStackScreen from "./ProfileStackScreen";
+import SupplierStackScreen from "./SupplierStackScreen";
 import ToDoStackScreen from "./ToDoStackScreen";
 
 
@@ -37,7 +38,7 @@ const TabMain = () => {
                 <Tab.Screen options={{
                     tabBarIcon: () => (<MaterialCommunityIcons name="home" size={40}></MaterialCommunityIcons>),
                     headerShown: false
-                }} name="Home" component={HomeStackScreen} />
+                }} name="Supplier" component={SupplierStackScreen} />
 
                 <Tab.Screen options={{
                     tabBarIcon: () => (<MaterialCommunityIcons name="jira" size={40}></MaterialCommunityIcons>),
