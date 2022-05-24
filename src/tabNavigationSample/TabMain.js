@@ -11,6 +11,7 @@ import ProductsStackScreen from "./ProductsStackScreen";
 import ProfileStackScreen from "./ProfileStackScreen";
 import SupplierStackScreen from "./SupplierStackScreen";
 import ToDoStackScreen from "./ToDoStackScreen";
+import UserStackScreen from "./UserStackScreen";
 
 
 
@@ -38,7 +39,7 @@ const TabMain = () => {
                 <Tab.Screen options={{
                     tabBarIcon: () => (<MaterialCommunityIcons name="home" size={40}></MaterialCommunityIcons>),
                     headerShown: false
-                }} name="Supplier" component={SupplierStackScreen} />
+                }} name="Supplier" component={UserStackScreen} />
 
                 <Tab.Screen options={{
                     tabBarIcon: () => (<MaterialCommunityIcons name="jira" size={40}></MaterialCommunityIcons>),

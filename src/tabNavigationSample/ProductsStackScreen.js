@@ -12,7 +12,6 @@ const ProductsStackScreen = () => {
         <ProductsStack.Navigator>
             <ProductsStack.Screen name="Product" component={ProductScreen} />
             <ProductsStack.Screen options={({ route }) => ({ title: route.params.title })} name="ProductDetail" component={ProductDetailScreen} />
-
         </ProductsStack.Navigator>
     )
 }
